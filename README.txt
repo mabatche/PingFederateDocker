@@ -20,7 +20,7 @@ Run the following from the directory where the Dockerfile is located:
 
 After a successful build, type the following to run your PingFederate image for the first time.
 
- docker run -it -p 9031:9031 -p 9999:9999 my-ping-image
+ docker run --name pingfederate9.0.0 -it -p 9031:9031 -p 9999:9999 my-ping-image
 
 - This will start your image and make PingFederate available.  The admin console can be accessed at https://localhost:9999/pingfederate
 - Im sure there is a better way to do this, but on the previous command, once you see that pingfed is running hit CTRL-C to cancel out of it and kill the image.
