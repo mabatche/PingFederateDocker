@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM centos:latest
 
 MAINTAINER mabatche@gmail.com <mabatche@gmail.com>
 
@@ -12,7 +12,8 @@ RUN yum install -y jdk-8u151-linux-x64.rpm
 COPY pingfederate-9.0.0 /
 
 #create log file directory for pingfederate and touch the server.log to the server will start and the symlinks will work for logging.
-RUN mkdir /pingfederate/log && touch /pingfederate/log/server.log
+#also clean up the rpm file used to install java to save space
+RUN mkdir /pingfederate/log && touch /pingfederate/log/server.log && rm /jdk-8u151-linux-x64.rpm
 
 #SET JAVA_HOME
 ENV JAVA_HOME /usr/java/latest/
