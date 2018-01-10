@@ -40,11 +40,15 @@ After a successful build, type the following to run your PingFederate image for 
 
 NOTES:
 
-One thing to note, is that each PingFederate server has its own log file.  In order to maintain that log file and make it available outside of each image a symbolic link was make from STDOUT to the server.log file
-You can see this mapping in the Dockerfile.
+If you wish to view the logs you can use the folowing command:
 
-You can see the log file for this image/container by running the follwoing command..
+server.log
+docker container exec -it my-ping-image tail -f /pingfederate/log/server.log
 
- docker logs pingfederate9.0.0
+access.log
+docker container exec -it my-ping-image tail -f /pingfederate/log/access.log
 
-I have yet to figure out how to combine log files so you can see the audit.log and access.log
+audit.log
+docker container exec -it my-ping-image tail -f /pingfederate/log/audit.log
+
+
