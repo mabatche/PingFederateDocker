@@ -42,13 +42,13 @@ NOTES:
 
 If you wish to view the logs you can use the folowing command:
 
-server.log
+
 docker container exec -it my-ping-image tail -f /pingfederate/log/server.log
 
-access.log
+
 docker container exec -it my-ping-image tail -f /pingfederate/log/access.log
 
-audit.log
+
 docker container exec -it my-ping-image tail -f /pingfederate/log/audit.log
 
 
